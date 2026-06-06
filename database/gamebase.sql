@@ -1,7 +1,4 @@
-CREATE DATABASE IF NOT EXISTS gamebase 
-CHARACTER SET utf8mb4 
-COLLATE utf8mb4_unicode_ci;
-
+CREATE DATABASE IF NOT EXISTS gamebase CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE gamebase;
 
 CREATE TABLE usuarios (
@@ -42,25 +39,22 @@ CREATE TABLE avaliacoes (
     FOREIGN KEY (jogo_id) REFERENCES jogos(id) ON DELETE CASCADE
 );
 
-INSERT INTO usuarios (nome, email, senha, tipo)
-VALUES
-    ('Admin', 'admin@gamebase.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin'),
-    ('Jogador Teste', 'user@gamebase.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'usuario');
+INSERT INTO usuarios (nome, email, senha, tipo) VALUES
+('Admin', 'admin@gamebase.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin'),
+('Jogador Teste', 'user@gamebase.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'usuario');
 
-INSERT INTO categorias (nome)
-VALUES
-    ('RPG'),
-    ('Ação'),
-    ('Aventura'),
-    ('Esporte'),
-    ('FPS'),
-    ('Estratégia');
+INSERT INTO categorias (nome) VALUES
+('RPG'),
+('Ação'),
+('Aventura'),
+('Esporte'),
+('FPS'),
+('Estratégia');
 
-INSERT INTO jogos (titulo, descricao, ano, categoria_id, capa_url)
-VALUES
-    ('The Witcher 3', 'RPG de mundo aberto com narrativa rica.', 2015, 1, 'https://cdn.cloudflare.steamstatic.com/steam/apps/292030/header.jpg'),
-    ('God of War', 'Ação épica nórdica com Kratos e Atreus.', 2018, 2, 'https://cdn.cloudflare.steamstatic.com/steam/apps/1593500/header.jpg'),
-    ('Hollow Knight', 'Metroidvania desafiador em mundo inseto.', 2017, 3, 'https://cdn.cloudflare.steamstatic.com/steam/apps/367520/header.jpg'),
-    ('FIFA 24', 'Futebol realista com licenças oficiais.', 2023, 4, 'https://cdn.cloudflare.steamstatic.com/steam/apps/2195250/header.jpg'),
-    ('CS2', 'FPS tático competitivo da Valve.', 2023, 5, 'https://cdn.cloudflare.steamstatic.com/steam/apps/730/header.jpg'),
-    ('Civilization VI', 'Estratégia 4X de construção de impérios.', 2016, 6, 'https://cdn.cloudflare.steamstatic.com/steam/apps/289070/header.jpg');
+INSERT INTO jogos (titulo, descricao, ano, categoria_id) VALUES
+('The Witcher 3', 'RPG de mundo aberto com narrativa rica.', 2015, 1),
+('God of War', 'Ação épica nórdica com Kratos e Atreus.', 2018, 2),
+('Hollow Knight', 'Metroidvania desafiador em mundo inseto.', 2017, 3),
+('FIFA 24', 'Futebol realista com licenças oficiais.', 2023, 4),
+('CS2', 'FPS tático competitivo da Valve.', 2023, 5),
+('Civilization VI', 'Estratégia 4X de construção de impérios.', 2016, 6);

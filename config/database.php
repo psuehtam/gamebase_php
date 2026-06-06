@@ -16,7 +16,7 @@ class Database
         $dbname = getenv("GAMEBASE_DB_NAME") ?: "gamebase";
         $username = getenv("GAMEBASE_DB_USER") ?: "root";
         $password = getenv("GAMEBASE_DB_PASS");
-        $password = $password !== false ? $password : "";
+        $password = $password !== false ? $password : "root";
         $charset = getenv("GAMEBASE_DB_CHARSET") ?: "utf8mb4";
 
         $dsn = sprintf(
@@ -140,7 +140,7 @@ class Database
                         "<p>" .
                         htmlspecialchars(
                             "Detalhe tecnico: " .
-                            $bootstrapException->getMessage(),
+                                $bootstrapException->getMessage(),
                             ENT_QUOTES,
                             "UTF-8"
                         ) .
